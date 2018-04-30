@@ -46,10 +46,10 @@ console.log(a);
 }
 */
 ````
-**这个就是利用babel将template模板解析成自定义结构的抽象dom树**
+**这个就是利用babel将template模板解析成自定义结构的抽象dom树**   
 
 
 记录自己学习编译参考的材料
 ---
-这里只写自己看过，时间过，然后觉得有用的
+这里只写自己看过，时间过，然后觉得有用的    
 [babel原理解析入门可以看这个-Babel是如何读懂JS代码的](https://zhuanlan.zhihu.com/p/27289600)

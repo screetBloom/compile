@@ -7,7 +7,10 @@ croak(msg) - throw new Error(msg)
 */
 
 
-InputStream('<div></div>')
+let input_obj = InputStream('<div></div>');
+input_obj.peek()
+input_obj.next()
+input_obj.peek()
 
 function InputStream(input) {
     var pos = 0, line = 1, col = 0;

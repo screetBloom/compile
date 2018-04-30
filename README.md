@@ -4,7 +4,7 @@ js编译，前置parsing也会放在这个部分
 
 编译起步，看babel挺好的
 <br>
-[babel中文网点击这里](https://babeljs.cn/) 
+[babel中文网点击这里](https://babeljs.cn/)     
 babel原理解析入门可以看这个 => [Babel是如何读懂JS代码的](https://zhuanlan.zhihu.com/p/27289600)  
 **举个babel的例子：**
 ```bash

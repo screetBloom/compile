@@ -46,7 +46,7 @@ console.log(a);
 }
 */
 ````
-**这个就是利用babel将template模板解析成抽象dom树**
+**这个就是利用babel将template模板解析成自定义结构的抽象dom树**
 
 
 记录自己学习编译参考的材料

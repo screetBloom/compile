@@ -10,8 +10,8 @@ js编译，前置parsing也会放在这个部分
 ```bash
 /** @jsx h */
 
-function h(type, props, ...children) {
-  return { type, props, children };
+function h(node, props, ...children) {
+  return { node, props, children };
 }
 
 const a = (
@@ -23,20 +23,20 @@ const a = (
 console.log(a);
 /*
 {
-    "type": "ul",
+    "node": "ul",
     "props": {
         "class": "list test"
     },
     "children": [
         {
-            "type": "li",
+            "node": "li",
             "props": null,
             "children": [
                 "item 1"
             ]
         },
         {
-            "type": "li",
+            "node": "li",
             "props": null,
             "children": [
                 "item 2"

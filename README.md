@@ -4,8 +4,8 @@ js编译，前置parsing也会放在这个部分
 
 编译起步，看babel挺好的
 <br>
-[babel中文网点击这里](https://babeljs.cn/)
-[babel原理解析入门可以看这个-Babel是如何读懂JS代码的](https://zhuanlan.zhihu.com/p/27289600)   
+[babel中文网点击这里](https://babeljs.cn/) 
+babel原理解析入门可以看这个 => [Babel是如何读懂JS代码的](https://zhuanlan.zhihu.com/p/27289600)  
 **举个babel的例子：**
 ```bash
 /** @jsx h */
@@ -52,4 +52,4 @@ console.log(a);
 记录自己学习编译参考的材料
 ---
 这里只写自己看过，实践过，然后觉得有用的，可以很明确的说，下面这哥们和我一样借鉴了一个外国人    
-[babel原理解析入门可以看这个-Babel是如何读懂JS代码的](https://zhuanlan.zhihu.com/p/27289600)
+babel原理解析入门可以看这个 => [Babel是如何读懂JS代码的](https://zhuanlan.zhihu.com/p/27289600)

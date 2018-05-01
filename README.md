@@ -21,7 +21,7 @@ const a = (
   </ul>
 );
 console.log(a);
-/*
+/*   输出如下：
 {
     "node": "ul",
     "props": {

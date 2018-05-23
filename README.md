@@ -57,6 +57,7 @@ console.log(a);
 - babel原理解析入门可以看这个,当然他这篇博客借鉴了一个外国人 => [Babel是如何读懂JS代码的](https://zhuanlan.zhihu.com/p/27289600)
 - 从零开始写一个compile => [如何使用 JavaScript 实现一门编程语言](https://www.kancloud.cn/xiaoyulive/system/606559)
 - babel官网推荐如何实现一个微型compiler（挺不错） => [the-super-tiny-compiler](https://github.com/jamiebuilds/the-super-tiny-compiler)
+-  前端如何学习编译，编译可以做什么 => [前端要以正确的姿势学习编译原理](https://zhuanlan.zhihu.com/p/36301857?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 
 <br>
 <br>

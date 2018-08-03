@@ -1,11 +1,8 @@
-# compile
-js编译，前置parsing也会放在这个部分
-
-
-编译起步，看babel挺好的
-<br>
+compile
+---
+前端本部分的学习中，将babel作为重要学习资料
 [babel中文网点击这里](https://babeljs.cn/)     
-babel原理解析入门可以看这个 => [Babel是如何读懂JS代码的](https://zhuanlan.zhihu.com/p/27289600)  
+**本仓库也是我个人的一个学习历程记录，下面是具体的参考资料清单**
 **举个babel的例子：**
 ```bash
 /** @jsx h */
@@ -54,7 +51,7 @@ console.log(a);
 这里只写自己看过，实践过，然后觉得有用的    
 <br>    
 **列表如下：**       
-- babel原理解析入门可以看这个,当然他这篇博客借鉴了一个外国人 => [Babel是如何读懂JS代码的](https://zhuanlan.zhihu.com/p/27289600)
+- babel原理解析入门可以看这个（这篇博客借鉴了一个外国人） => [Babel是如何读懂JS代码的](https://zhuanlan.zhihu.com/p/27289600)
 - 从零开始写一个compile => [如何使用 JavaScript 实现一门编程语言](https://www.kancloud.cn/xiaoyulive/system/606559)
 - babel官网推荐如何实现一个微型compiler（挺不错） => [the-super-tiny-compiler](https://github.com/jamiebuilds/the-super-tiny-compiler)
 -  前端如何学习编译，编译可以做什么 => [前端要以正确的姿势学习编译原理](https://zhuanlan.zhihu.com/p/36301857?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)

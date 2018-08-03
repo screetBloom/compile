@@ -1,4 +1,4 @@
-Transpiling
+transpiling
 ---
 前端本部分的学习，会将babel作为重要学习资料
 <br>

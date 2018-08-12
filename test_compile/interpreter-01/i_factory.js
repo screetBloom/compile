@@ -5,7 +5,6 @@ next() - 返回下一个值，并将其从流中丢弃。
 eof() - 当且仅当流中没有更多值时才返回true。
 croak(msg) - throw new Error(msg)
 */
-
 let input_obj = InputStream('<div><ul><li>cc</li></ul></div>\n' +
     '<span>aa</span>'),
     str = '';

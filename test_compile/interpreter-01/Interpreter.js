@@ -1,4 +1,5 @@
 
+
 function Environment(parent) {
     this.vars = Object.create(parent ? parent.vars : null);
     this.parent = parent;

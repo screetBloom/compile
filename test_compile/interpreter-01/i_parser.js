@@ -1,5 +1,4 @@
 
-
 function parse(input) {
     var PRECEDENCE = {
         "=": 1,

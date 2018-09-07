@@ -1,10 +1,3 @@
-/**
- *
- * User: wim_chen
- * Date: 2018/9/5
- * Time: 下午11:03
- *
- */
 
 var json = `{name: 111,}`
 

@@ -1,6 +1,7 @@
 let a = 123;
 
 
+
 function f(obj, current, target) {
     let res = JSON.stringify(obj);
     current.forEach((item, index) => {

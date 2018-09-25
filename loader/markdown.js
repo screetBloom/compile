@@ -11,7 +11,6 @@ function f(obj, current, target) {
 }
 
 
-
 function f1(obj, current, target) {
     let res = JSON.stringify(obj);
     current.forEach((item, index) => {

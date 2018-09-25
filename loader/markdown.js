@@ -11,8 +11,6 @@ function f(obj, current, target) {
 }
 
 
-f1({}, ['originPrice','currentPrice'],[]);
-
 function f1(obj, current, target) {
     let res = JSON.stringify(obj);
     current.forEach((item, index) => {

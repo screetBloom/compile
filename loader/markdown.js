@@ -46,14 +46,15 @@ let test = JSON.stringify({
     }
 });
 
-let res = f1(test, ['hasCutPrice'],[]);
-console.log(' >>>  ', res);
+f1(test, ['originPrice','currentPrice'],[]);
 
 function f1(obj, current, target) {
     let res = JSON.stringify(obj);
-    current.forEach((item) => {
+    current.forEach((item, index) => {
+        console.log('  >>>>>  ', index);
         let reg = new RegExp(`"${item}":{"value":(.*?)}`, 'gm');
-        res = res.replace(reg, `"${item}":(.*)`);
+        console.log(res.match(reg));
+        // res = res.replace(reg, `"${item}":(.*)`);
     });
     return JSON.parse(res);
 }

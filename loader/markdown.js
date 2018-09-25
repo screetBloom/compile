@@ -10,9 +10,8 @@ function f(obj, current, target) {
     return JSON.parse(res);
 }
 
-let test = '';
 
-f1(test, ['originPrice','currentPrice'],[]);
+f1({}, ['originPrice','currentPrice'],[]);
 
 function f1(obj, current, target) {
     let res = JSON.stringify(obj);

@@ -55,66 +55,84 @@ function structuralTransform(obj, parent) {
     }
 }
 
-let test = {
-    "appointUrl": "//h5.51ping.com/app/gfe-app-education-common-book/index.html?productId=867156&bookChannel=dp_product",
-    "showTeacherNationality": true,
-    "productItemInfoBeans": [{
-        "skuId": 1469460,
-        "itemName": "1",
-        "classTotalHours": "2ihjf",
-        "classLaw": "294",
-        "classStartTime": "随到随学",
-        "reduceTag": null,
-        "classContentList": [{"title": "0kljasdf", "times": "1", "originPrice": {"value": "29"}}],
-        "price": {"value": "29.00"},
-        "originPrice": {"value": "29.00"},
-        "reducePrice": null,
-        "discountDetailInfo": null,
-        "discountInfo": null
-    }],
-    "haveAppoint": true,
-    "shareBean": {
-        "url": "//h5.51ping.com/app/app-education-sku-all/skudetail.html?productId=867156&source=dianping&shopId=1880329",
-        "image": "//p1.meituan.net/education/7d6c94e872d736a0c52743056397346f357703.jpg%40100w_100h_1e_1c_1l%7Cwatermark%3D0",
-        "title": "【课程】仅售29元 | 韦博的日语考级 - 韦博英语(静安环球大厦中心)",
-        "desc": "★★★☆☆\n静安寺 英语\n-09a-dfasdf",
-        "content": "【课程】仅售29元 | 韦博的日语考级 - 韦博英语(静安环球大厦中心)"
-    },
-    "canRefund": true,
-    "hasCollect": false,
-    "canBuy": true,
-    "productDetailLink": "//h5.51ping.com/edu/education-sku-detail/detail.html?productId=867156",
-    "categoryIds": [102, 10202],
-    "classDuration": "1小时",
-    "phone": "4009811028",
-    "hasLogin": true,
-    "basicInfoBean": {
-        "videoHeadpic": null,
-        "videoUrl": null,
-        "productName": "韦博的日语考级",
-        "soldoutTotal": 6,
-        "suitCrowds": "青少年",
-        "suitBase": "初级",
-        "classNum": "1对1",
-        "teacherNationality": "外教",
-        "imUrl": "dianping://web?url=https%3A%2F%2Fg.51ping.com%2Fapp%2Fbabyfe-app-baby-im%2Findex.html%3FshopId%3Dsb7td7mavw9jg1qg7%26clientType%3D100501",
-        "haveIm": true,
-        "classStudyTime": null,
-        "classCatergoryName": "日语",
-        "headpics": ["//p1.meituan.net/education/7d6c94e872d736a0c52743056397346f357703.jpg%40640w_360h_1e_1c_1l%7Cwatermark%3D0", "//p1.meituan.net/education/11d1ce90f846abeac00e2a549b711d96573546.jpg%40640w_360h_1e_1c_1l%7Cwatermark%3D0"],
-        "minCurrentPrice": {"value": "29.00"},
-        "maxCurrentPrice": {"value": "29.00"},
-        "originPrice": {"value": "29.00"},
-        "classHighlights": ["-09a-dfasdf"],
-        "startTime": "2018-07-17T16:00:00.000Z",
-        "endTime": "2099-08-15T15:59:59.000Z"
-    },
-    "bookingCount": 1,
-    "enrollLink": "//h5.51ping.com/app/app-education-sku-all/skuorder.html?productId=867156&token=!&dpid=*",
-    "categoryId": 2872
-};
 
-console.log('  >>>>  ',structuralTransform(test));
+let arr = [
+    {
+        productName: '大白菜',
+        eName: 'dabaicai',
+        age: 25,
+        city: 'shanghai',
+        height: 170,
+        tag: '新品上市'
+    },
+    {
+        productName: '大白菜',
+        eName: 'dabaicai',
+        age: 26,
+        city: 'shanghai',
+        height: 900,
+        tag: '新品上市'
+    },
+    {
+        productName: '小白菜',
+        eName: 'xiaobaicai',
+        age: 31,
+        height: 169,
+        tag: '新品上市'
+    },
+    {
+        productName: '昨天的白菜',
+        eName: 'zuotiandebaicai',
+        age: 31,
+        height: 167,
+        tag: '特价优惠'
+    },
+    {
+        productName: '前天的白菜',
+        eName: 'qiantiandebaicai',
+        age: 22,
+        height: 160,
+        tag: '特价优惠'
+    },
+    {
+        productName: '内部白菜',
+        eName: 'neibubaicai',
+        age: 23,
+        height: 159,
+        tag: '线上直售'
+    }
+];
+
+
+function sortByKey(arr, key, type) {
+    if (!_isType(arr, 'array')) return;
+    let tree = {};
+    arr.forEach((item) => {
+        let tagValue = item[key];
+        if (!tree[tagValue]) {
+            tree[tagValue] = [];
+        }
+        tree[tagValue].push(item);
+    });
+    if (type === '2Arr') {
+        let res = [];
+        Object.keys(tree).forEach((item) => {
+            res.push({
+                key: item,
+                children: tree[item]
+            });
+        });
+        return res;
+    }
+    return tree;
+}
+
+function shopListSort(arr, key, type) {
+    // 分类
+    let res = sortByKey(arr, key, type);
+
+}
+console.log(JSON.stringify(shopListSort(arr, 'productName','2Arr')));
 
 
 

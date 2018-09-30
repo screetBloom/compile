@@ -134,8 +134,8 @@ function shopListSort(arr, key, type) {
     Object.keys(tem).forEach((item) => {
         keys.push(item);
     });
+    // 首字母排序
     keys.sort();
-    console.log(' keys  >>>   ', keys);
     keys.forEach((item) => {
         res.push(tem[item])
     });

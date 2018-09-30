@@ -134,6 +134,7 @@ function shopListSort(arr, key, type) {
     Object.keys(tem).forEach((item) => {
         keys.push(item);
     });
+    console.log('keys >>> ',keys);
     // 首字母排序
     keys.sort();
     keys.forEach((item) => {
@@ -141,7 +142,31 @@ function shopListSort(arr, key, type) {
     });
     return res;
 }
-console.log(JSON.stringify(shopListSort(arr, 'eName')));
+
+let test = [
+    {
+        "shopId": 3472075,
+        "shopName": "新东方(复旦校区)",
+        "branchName": "复旦校区",
+        "cityId": 1,
+        "cityName": "上海",
+        "cityEnName": "shanghai",
+        "shopPower": 0,
+        "defaultPic": "//p0.meituan.net/education/de4fcbd1973f11a1211382fa7e339c741367878.jpg%40164w_120h_1e_1c_1l%7Cwatermark%3D0",
+        "avgPrice": 0,
+        "mainRegionName": "五角场/大学区",
+        "mainCategoryName": "更多教育培训",
+        "shopLink": "//m.51ping.com/shop/df6ggmanap1habvr",
+        "address": "国权路561号",
+        "distanceNow": 12970973.394570759,
+        "distanceNowStr": "",
+        "phoneNo": [
+            "4007021021",
+            "60703270"
+        ]
+    }
+]
+console.log(JSON.stringify(shopListSort(test, 'cityEnName')));
 
 
 

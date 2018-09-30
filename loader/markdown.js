@@ -135,7 +135,7 @@ function shopListSort(arr, key, type) {
         keys.push(item);
     });
     keys.sort();
-    console.log(' keys >>>  ', keys);
+    console.log(' keys  >>>   ', keys);
     keys.forEach((item) => {
         res.push(tem[item])
     });

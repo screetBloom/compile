@@ -129,10 +129,19 @@ function sortByKey(arr, key, type) {
 
 function shopListSort(arr, key, type) {
     // 分类
-    let res = sortByKey(arr, key, type);
-
+    let tem = sortByKey(arr, key, type), res = [];
+    let keys = [];
+    Object.keys(tem).forEach((item) => {
+        keys.push(item);
+    });
+    keys.sort();
+    console.log(' keys >>>  ', keys);
+    keys.forEach((item) => {
+        res.push(tem[item])
+    });
+    return res;
 }
-console.log(JSON.stringify(shopListSort(arr, 'productName','2Arr')));
+console.log(JSON.stringify(shopListSort(arr, 'eName')));
 
 
 

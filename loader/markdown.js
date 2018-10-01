@@ -143,6 +143,7 @@ function shopListSort(arr, key, type) {
     return res;
 }
 
+
 let test = [
     {
         "shopId": 3472075,

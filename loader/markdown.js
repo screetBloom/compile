@@ -1,172 +1,150 @@
-let a = 123;
+'use strict';
 
-function f(obj, current, target) {
-    let res = JSON.stringify(obj);
-    current.forEach((item, index) => {
-        let reg = new RegExp(`"${item}":`, 'gm');
-        res = res.replace(reg, `"${target[index]}":`)
-    });
-    return JSON.parse(res);
+/*
+ * OBJECT ASSIGN DEEP
+ * Allows deep cloning of plain objects that contain primitives, nested plain objects, or nested plain arrays.
+ */
+
+/*
+ * A unified way of returning a string that describes the type of the given variable.
+ */
+function getTypeOf (input) {
+
+    if (input === null) {
+        return 'null';
+    }
+
+    else if (typeof input === 'undefined') {
+        return 'undefined';
+    }
+
+    else if (typeof input === 'object') {
+        return (Array.isArray(input) ? 'array' : 'object');
+    }
+
+    return typeof input;
+
 }
 
-function f1(obj, current, target) {
-    let res = JSON.stringify(obj);
-    current.forEach((item, index) => {
-        let reg = new RegExp(`"${item}":{"value":(.*?)}`, 'gm');
-        let value = JSON.parse(`{${res.match(reg)[0]}}`)[item].value;
-        res = res.replace(reg, `"${item}":${value}`);
-        console.log(JSON.parse(res))
-    });
-    return JSON.parse(res);
+/*
+ * Branching logic which calls the correct function to clone the given value base on its type.
+ */
+function cloneValue (value) {
+
+    // The value is an object so lets clone it.
+    if (getTypeOf(value) === 'object') {
+        return quickCloneObject(value);
+    }
+
+    // The value is an array so lets clone it.
+    else if (getTypeOf(value) === 'array') {
+        return quickCloneArray(value);
+    }
+
+    // Any other value can just be copied.
+    return value;
+
 }
 
-function _isType(obj, type) {
-    return (
-        Object.prototype.toString.call(obj).toLowerCase() === '[object ' + type + ']'
-    );
+/*
+ * Enumerates the given array and returns a new array, with each of its values cloned (i.e. references broken).
+ */
+function quickCloneArray (input) {
+    return input.map(cloneValue);
 }
 
-function structuralTransform(obj, parent) {
-    if (_isType(obj, 'array')) {
-        obj.forEach((item) => {
-            let flag = _isType(item, 'array') || _isType(item, 'object');
-            if (flag) {
-                structuralTransform(item, obj);
-            } else {
-                // do nothing
-            }
-        })
-    } else if (_isType(obj, 'object')) {
-        Object.keys(obj).forEach((key) => {
-            let flag = _isType(obj[key], 'array') || _isType(obj[key], 'object');
-            if (flag) {
-                structuralTransform(obj[key], obj);
-            } else {
-                let tem = (key === 'value') && (Object.keys(obj).length === 1);
-                if (tem) {
-                    // obj = obj[key];
-                    parent.obj = obj[key];
+/*
+ * Enumerates the properties of the given object (ignoring the prototype chain) and returns a new object, with each of
+ * its values cloned (i.e. references broken).
+ */
+function quickCloneObject (input) {
+
+    const output = {};
+
+    for (const key in input) {
+        if (!input.hasOwnProperty(key)) { continue; }
+
+        output[key] = cloneValue(input[key]);
+    }
+
+    return output;
+
+}
+
+/*
+ * Does the actual deep merging.
+ */
+function executeDeepMerge (target, _objects = [], _options = {}) {
+
+    const options = {
+        arrayBehaviour: _options.arrayBehaviour || 'replace',  // Can be "merge" or "replace".
+    };
+
+    // Ensure we have actual objects for each.
+    const objects = _objects.map(object => object || {});
+    const output = target || {};
+
+    // Enumerate the objects and their keys.
+    for (let oindex = 0; oindex < objects.length; oindex++) {
+        const object = objects[oindex];
+        const keys = Object.keys(object);
+
+        for (let kindex = 0; kindex < keys.length; kindex++) {
+            const key = keys[kindex];
+            const value = object[key];
+            const type = getTypeOf(value);
+            const existingValueType = getTypeOf(output[key]);
+
+            if (type === 'object') {
+                if (existingValueType !== 'undefined') {
+                    const existingValue = (existingValueType === 'object' ? output[key] : {});
+                    output[key] = executeDeepMerge({}, [existingValue, quickCloneObject(value)], options);
+                }
+                else {
+                    output[key] = quickCloneObject(value);
                 }
             }
-        })
-    } else {
-        // do nothing
-    }
-}
 
+            else if (type === 'array') {
+                if (existingValueType === 'array') {
+                    const newValue = quickCloneArray(value);
+                    output[key] = (options.arrayBehaviour === 'merge' ? output[key].concat(newValue) : newValue);
+                }
+                else {
+                    output[key] = quickCloneArray(value);
+                }
+            }
 
-let arr = [
-    {
-        productName: '大白菜',
-        eName: 'dabaicai',
-        age: 25,
-        city: 'shanghai',
-        height: 170,
-        tag: '新品上市'
-    },
-    {
-        productName: '大白菜',
-        eName: 'dabaicai',
-        age: 26,
-        city: 'shanghai',
-        height: 900,
-        tag: '新品上市'
-    },
-    {
-        productName: '小白菜',
-        eName: 'xiaobaicai',
-        age: 31,
-        height: 169,
-        tag: '新品上市'
-    },
-    {
-        productName: '昨天的白菜',
-        eName: 'zuotiandebaicai',
-        age: 31,
-        height: 167,
-        tag: '特价优惠'
-    },
-    {
-        productName: '前天的白菜',
-        eName: 'qiantiandebaicai',
-        age: 22,
-        height: 160,
-        tag: '特价优惠'
-    },
-    {
-        productName: '内部白菜',
-        eName: 'neibubaicai',
-        age: 23,
-        height: 159,
-        tag: '线上直售'
-    }
-];
+            else {
+                output[key] = value;
+            }
 
-
-function sortByKey(arr, key, type) {
-    if (!_isType(arr, 'array')) return;
-    let tree = {};
-    arr.forEach((item) => {
-        let tagValue = item[key];
-        if (!tree[tagValue]) {
-            tree[tagValue] = [];
         }
-        tree[tagValue].push(item);
-    });
-    if (type === '2Arr') {
-        let res = [];
-        Object.keys(tree).forEach((item) => {
-            res.push({
-                key: item,
-                children: tree[item]
-            });
-        });
-        return res;
     }
-    return tree;
+
+    return output;
+
 }
 
-function shopListSort(arr, key, type) {
-    // 分类
-    let tem = sortByKey(arr, key, type), res = [];
-    let keys = [];
-    Object.keys(tem).forEach((item) => {
-        keys.push(item);
-    });
-    console.log('keys >>> ',keys);
-    // 首字母排序
-    keys.sort();
-    keys.forEach((item) => {
-        res.push(tem[item])
-    });
-    return res;
-}
+/*
+ * Merge all the supplied objects into the target object, breaking all references, including those of nested objects
+ * and arrays, and even objects nested inside arrays. The first parameter is not mutated unlike Object.assign().
+ * Properties in later objects will always overwrite.
+ */
+module.exports = function objectAssignDeep (target, ...objects) {
+    return executeDeepMerge(target, objects);
+};
 
+/*
+ * Same as objectAssignDeep() except it doesn't mutate the target object and returns an entirely new object.
+ */
+module.exports.noMutate = function objectAssignDeepInto (...objects) {
+    return executeDeepMerge({}, objects);
+};
 
-let test = [
-    {
-        "shopId": 3472075,
-        "shopName": "新东方(复旦校区)",
-        "branchName": "复旦校区",
-        "cityId": 1,
-        "cityName": "上海",
-        "cityEnName": "shanghai",
-        "shopPower": 0,
-        "defaultPic": "//p0.meituan.net/education/de4fcbd1973f11a1211382fa7e339c741367878.jpg%40164w_120h_1e_1c_1l%7Cwatermark%3D0",
-        "avgPrice": 0,
-        "mainRegionName": "五角场/大学区",
-        "mainCategoryName": "更多教育培训",
-        "shopLink": "//m.51ping.com/shop/df6ggmanap1habvr",
-        "address": "国权路561号",
-        "distanceNow": 12970973.394570759,
-        "distanceNowStr": "",
-        "phoneNo": [
-            "4007021021",
-            "60703270"
-        ]
-    }
-]
-console.log(JSON.stringify(shopListSort(test, 'cityEnName')));
-
-
-
+/*
+ * Allows an options object to be passed in to customise the behaviour of the function.
+ */
+module.exports.withOptions = function objectAssignDeepInto (target, objects, options) {
+    return executeDeepMerge(target, objects, options);
+};

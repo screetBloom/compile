@@ -64,3 +64,7 @@ console.log(a);
 <br>
 <br>
 
+具体实践
+---
+- gulp自动生成文件
+- babel进行自定义语法转译

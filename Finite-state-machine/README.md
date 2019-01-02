@@ -10,3 +10,5 @@ Finite-state machine(有限状态机)
 - 随意定义，难以维护
 - 重复工作
 
+
+

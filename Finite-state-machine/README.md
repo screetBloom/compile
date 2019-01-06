@@ -5,6 +5,7 @@ Finite-state machine(有限状态机)
 ![状态机示意图](http://www.ruanyifeng.com/blogimg/asset/201309/bg2013090201.png)
 
 #### 对有限状态机的思考
+有限状态机简单的可以说是一个有限状态的映射表
 
 #### 有限状态机结合CSS的实践
 出发点：

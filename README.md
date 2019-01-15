@@ -67,5 +67,7 @@ console.log(a);
 具体实践
 ---
 上次写的一个例子因为涉及到自己在公司用的包，已经应安全部门要求删除
-- gulp自动生成文件
+- node操作文件实现自动化
+    - ejs模板自动化生成vue组件 
 - babel进行自定义语法转译
+- [CSS状态切换结合有限状态机](https://github.com/screetBloom/compile/tree/master/Finite-state-machine)

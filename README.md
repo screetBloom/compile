@@ -3,6 +3,7 @@ up
 babel是我个人前端编译学习的重要学习资料，真正让我对babel入门的是[这一篇文章](https://juejin.im/post/5c21b584e51d4548ac6f6c99)。
 </br>
 最主要的就是讲了这张图，秒懂这张图的同学，接下来只需要多练、多看基本就没有什么问题了。
+</br>
 ![babel三板斧](https://user-gold-cdn.xitu.io/2018/12/24/167dfa8949b0401a?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
 
 入门第一步：babel三板斧

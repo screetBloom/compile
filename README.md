@@ -28,7 +28,7 @@ babel是我个人前端编译学习的重要学习资料,真正让我对babel入
 上次写的一个例子因为涉及到自己在公司用的包，已经应安全部门要求删除
 - node操作文件实现自动化
     - [ejs模板自动化生成vue组件](//github.com/screetBloom/compile/tree/master/gulp) 
-- babel进行自定义语法转译
+- babel进行自定义语法转译 - 这个部分目前采用的是对注释节点进行替换
 - [CSS状态切换结合有限状态机](//github.com/screetBloom/compile/tree/master/Finite-state-machine)
 
 

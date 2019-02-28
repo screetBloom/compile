@@ -13,7 +13,10 @@ babel是我个人前端编译学习的重要学习资料，真正让我对babel�
 - [babel-traverse](https://github.com/thejameskyle/babel-handbook/blob/master/translations/en/plugin-handbook.md#babel-traverse)
 - [babel-generator](https://github.com/babel/babel/tree/master/packages/babel-generator)
 
-本仓库也是我个人的一个学习历程记录，下面是具体的参考资料清单
+声明一点：本仓库不只是对javascript语法、结构的处理，还会结合视图层渲染一起杂着记录，因为只是将babel单独拎出来，你会发现没有什么好讲的。
+</br>
+当然可以写几个具体的demo，但是在实际项目中，其实babel只是起到其中一个工具的作用。
+学习历程记录，下面是具体的参考资料清单
 ---
 这里只列举个人看过，实践过，然后觉得有用的。
 <br>    
@@ -35,6 +38,8 @@ babel是我个人前端编译学习的重要学习资料，真正让我对babel�
 具体实践
 ---
 上次写的一个例子因为涉及到自己在公司用的包，已经应安全部门要求删除
+</br>
+可能有的例子并不是借助babel三板斧去做的，但是其实都一样，原理都是对AST数据的增、删、改；对
 - node操作文件实现自动化
     - [ejs模板自动化生成vue组件](//github.com/screetBloom/compile/tree/master/gulp) 
 - babel进行自定义语法转译 - 这个部分目前采用的是对注释节点进行替换

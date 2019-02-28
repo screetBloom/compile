@@ -4,6 +4,12 @@ babel是我个人前端编译学习的重要学习资料,真正让我对babel入
 最主要的就是讲了这张图,秒懂这张图的，接下来只需要多练、多看基本就没有什么问题了。
 ![babel三板斧](https://user-gold-cdn.xitu.io/2018/12/24/167dfa8949b0401a?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
 
+入门第一步：babel三板斧
+---
+- babylon
+- babel-traverse
+- babel-generator
+
 本仓库也是我个人的一个学习历程记录，下面是具体的参考资料清单
 ---
 这里只列举个人看过，实践过，然后觉得有用的

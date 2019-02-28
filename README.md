@@ -9,9 +9,9 @@ babel是我个人前端编译学习的重要学习资料，真正让我对babel�
 
 入门第一步：babel三板斧
 ---
-- babylon
-- babel-traverse
-- babel-generator
+- [babylon](https://github.com/babel/babylon)
+- [babel-traverse](https://github.com/thejameskyle/babel-handbook/blob/master/translations/en/plugin-handbook.md#babel-traverse)
+- [babel-generator](https://github.com/babel/babel/tree/master/packages/babel-generator)
 
 本仓库也是我个人的一个学习历程记录，下面是具体的参考资料清单
 ---

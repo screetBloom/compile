@@ -32,7 +32,6 @@ babel是我个人前端编译学习的重要学习资料，真正让我对babel�
 - babel进阶插件 => [babel插件手册](https://github.com/jamiebuilds/babel-handbook/blob/master/translations/zh-Hans/plugin-handbook.md)
 
 
-
 <br>
 <br>
 <br>

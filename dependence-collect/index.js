@@ -1,11 +1,12 @@
 
 const path = require("path");
 const http = require("http");
+const fs = require("fs");
+
 const LINA_HOSTS = ``;
 const WHITE_LIST_LINA_KEY = ``;
 const PUSH_TYPE = '';
 let whiteList = [];
-const fs = require("fs");
 
 async function main(param) {
     console.log("")

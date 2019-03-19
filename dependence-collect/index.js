@@ -7,16 +7,6 @@ const PUSH_TYPE = '';
 let whiteList = [];
 const fs = require("fs");
 
-function isType(obj, type) {
-    return (
-        Object.prototype.toString.call(obj).toLowerCase() === '[object ' + type + ']'
-    );
-}
-
-function _toString(value) {
-    return isType(value, 'object') ? JSON.stringify(value) : String(value);
-}
-
 async function main(param) {
     console.log("")
     console.log("")
@@ -142,6 +132,16 @@ async function getLina() {
         });
         req.end();
     })
+}
+
+function isType(obj, type) {
+    return (
+        Object.prototype.toString.call(obj).toLowerCase() === '[object ' + type + ']'
+    );
+}
+
+function _toString(value) {
+    return isType(value, 'object') ? JSON.stringify(value) : String(value);
 }
 
 // 原定兼容yarnLockFile.parse和package-lock结构

@@ -3,9 +3,7 @@ const path = require("path");
 const http = require("http");
 const https = require("https");
 const {AWP_GIT_KEY, AWP_GIT_SLUG, AWP_OP: userName, REACT_APP_OWL_PROJECT: project = "null", AWP_DEPLOY_ENV: env = "beta", AWP_BUSINESS_TYPE} = process.env;
-if (AWP_BUSINESS_TYPE === 'MRN') {
-    cwd = process.cwd();
-}
+
 const LINA_HOSTS = ``;
 const WHITE_LIST_LINA_KEY = ``;
 const PUSH_TYPE = '';

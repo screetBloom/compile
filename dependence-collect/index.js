@@ -5,7 +5,6 @@ const LINA_HOSTS = ``;
 const WHITE_LIST_LINA_KEY = ``;
 const PUSH_TYPE = '';
 let whiteList = [];
-
 const fs = require("fs");
 
 function isType(obj, type) {

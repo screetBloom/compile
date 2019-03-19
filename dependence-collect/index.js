@@ -22,10 +22,6 @@ async function main(param) {
     console.log("")
     console.log("")
     console.log('当前环境>',AWP_BUSINESS_TYPE);
-    // if(env != "production"){
-    //   console.log("非正式环境,关闭采集");
-    //   return ;
-    // }
     console.log('cwd path>',path.join(cwd, "package.json"));
     try {
         let pkgPath = path.join(cwd, "package.json");

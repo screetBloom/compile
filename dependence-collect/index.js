@@ -2,7 +2,6 @@
 const path = require("path");
 const http = require("http");
 const https = require("https");
-
 const LINA_HOSTS = ``;
 const WHITE_LIST_LINA_KEY = ``;
 const PUSH_TYPE = '';

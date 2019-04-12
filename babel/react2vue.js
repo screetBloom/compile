@@ -12,7 +12,6 @@ var transformTS = require('./ts')
 var flowRemoveTypes = require('flow-remove-types');
 var {reportIssue, removeBadCode, isVariableFunc} = require('./utility')
 
-
 module.exports = function transform (src, options) {
     // read file
     let fileContent = fs.readFileSync(src)

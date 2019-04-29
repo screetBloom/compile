@@ -6,7 +6,6 @@ const WHITE_LIST_LINA_KEY = ``;
 const PUSH_TYPE = '';
 let whiteList = [];
 
-
 async function main(param) {
     console.log("")
     console.log("")

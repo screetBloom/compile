@@ -8,18 +8,16 @@ babel是我个人前端编译学习的重要学习资料，真正让我对babel�
 ![babel三板斧](./img/babel.png)
 </br>
 
-入门第一步：babel三板斧
+上手之路
 ---
+**babel三板斧**
 - [babylon](https://github.com/babel/babylon)
 - [babel-traverse](https://github.com/thejameskyle/babel-handbook/blob/master/translations/en/plugin-handbook.md#babel-traverse)
 - [babel-generator](https://github.com/babel/babel/tree/master/packages/babel-generator)
 
 声明一点：本仓库不只是对javascript语法、结构的处理，还会结合视图层渲染一起杂着记录，因为只是将babel单独拎出来，你会发现没有什么好讲的。
-</br>
-</br>
+    
 当然可以写几个具体的demo，但是在实际项目中，其实babel只是起到其中一个开箱即用的"老虎钳"作用。
-
-</br>
 </br>
 
 学习历程记录

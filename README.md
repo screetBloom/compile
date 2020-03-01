@@ -34,18 +34,3 @@ babel是我个人前端编译学习的重要学习资料，真正让我对babel�
 <br>
 <br>
 <br>
-
-思考/感悟/收获
----
-这一段时间有点过于放松了，很久没有静下心来深入的去进行原理层的研究了，有点羞愧；另外感觉自己陷入了一个"手机陷阱"的漩涡，毫无所得的浪费时间
-
-
-具体实践
----
-上次写的一个例子因为涉及到自己在公司用的包，已经应安全部门要求删除
-</br>
-- 解析package-lock.json/yarn.lock
-- node操作文件实现自动化
-    - [ejs模板自动化生成vue组件](//github.com/screetBloom/compile/tree/master/gulp) 
-- react转vue：[react2vue](https://github.com/screetBloom/compile/blob/master/babel/react2vue.js)
-
